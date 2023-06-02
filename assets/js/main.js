@@ -1,5 +1,14 @@
 import words from "./words.js"
 
-for (let x = 0; x < words.nine.length; x++) {
-    console.log(words.nine[x]);
+
+// GETSOLUTION FUNCTION PROVIDES THE SOLUTION WORDS
+
+let solution = ""
+function getSolution(wordNumArr) {
+    var x = Math.floor(Math.random() * (wordNumArr.length - 1))
+    solution = wordNumArr[x]
 }
+
+getSolution(words.three)
+
+console.log(solution)
