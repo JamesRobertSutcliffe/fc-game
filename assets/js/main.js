@@ -1,9 +1,10 @@
 import words from "./words.js"
 
+let solution = ""
+let jumbledSolution = ""
 
 // GETSOLUTION FUNCTION PROVIDES THE SOLUTION WORDS //
 
-let solution = ""
 const getSolution = (wordNumArr) => {
     let x = Math.floor(Math.random() * (wordNumArr.length - 1))
     solution = wordNumArr[x].toUpperCase()
@@ -22,16 +23,28 @@ const jumbleSolution = (solution) => {
         splitSolution[i] = splitSolution[j];
         splitSolution[j] = temp;
     }
-    let jumbledSolution = splitSolution.join('')
+    let joinedJumbledSolution = splitSolution.join('')
 
-    if ((jumbledSolution === solution) || (jumbledSolution === undefined)) {
+    if ((joinedJumbledSolution === solution) || (joinedJumbledSolution === undefined)) {
         jumbleSolution(solution)
-    } else {
-
-        return jumbledSolution
     }
+
+    jumbledSolution = joinedJumbledSolution;
+    return jumbledSolution
 };
 
 console.log(jumbleSolution(solution));
 
+const renderJumbledSolution = () => {
+
+    let jumbledArr = [...jumbledSolution]
+    for (var y = 0; y < jumbledArr.length; y++) {
+        const panContainer = document.getElementById('pan-container');
+        const charButton = document.createElement('button');
+        charButton.textContent = jumbledArr[y]
+        panContainer.appendChild(charButton)
+    }
+}
+
+renderJumbledSolution()
 

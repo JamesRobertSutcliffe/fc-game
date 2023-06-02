@@ -16,6 +16,7 @@
 
 body {
     background-color: var(--primary);
+    color: var(--secondary);
 }
 
 h1 {
@@ -25,4 +26,22 @@ h1 {
     font-size: 50px;
     font-weight: bold;
     color: var(--secondary);
+}
+
+.info-container {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.solution-container {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.pan-container {
+    width: 50%;
+    margin: auto;
+    text-align: center;
 }
