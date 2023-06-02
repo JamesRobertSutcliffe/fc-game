@@ -122,7 +122,27 @@ const words = {
         "peaceful",
         "exciting",
         "friendly"],
-    "nine": []
+    "nine": ["brilliant",
+        "beautiful",
+        "happiness",
+        "adventure",
+        "challenge",
+        "knowledge",
+        "fantastic",
+        "signature",
+        "energetic",
+        "delicious",
+        "butterfly",
+        "lifestyle",
+        "important",
+        "sunflower",
+        "expensive",
+        "sparkling",
+        "hilarious",
+        "fascinate",
+        "celebrity",
+        "companion",
+    ]
 };
 
 export default words;
