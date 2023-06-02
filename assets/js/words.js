@@ -39,7 +39,7 @@ const words = {
         "mint",
         "brim",
         "hazy",
-        "mith",
+        "brim",
         "swim"],
     "five": ["brisk",
         "clump",

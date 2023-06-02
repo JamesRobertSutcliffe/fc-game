@@ -7,7 +7,7 @@
 
 ## Level Up Mode
 
-- Create an object that has keys for 3 - 10 letter words
+- Create an object that has keys for 3 - 9 letter words
 - create a function that pulls for desired array, loops through this array and stores this item in a variable (x)
 - convert x to an array and then randomise the order of this array (ensure it is not the same as original or too similar) 
 - Dynamically render this array to page with each letter as a button with a data id of x value.
