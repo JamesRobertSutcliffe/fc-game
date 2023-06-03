@@ -3,7 +3,6 @@ import words from "./words.js"
 let solution = ""
 let jumbledSolution = ""
 
-
 // GAME LOGIC FUNCTIONS
 
 // GETSOLUTION FUNCTION PROVIDES THE SOLUTION WORDS //
@@ -12,7 +11,6 @@ const getSolution = (wordNumArr) => {
     let x = Math.floor(Math.random() * (wordNumArr.length - 1))
     solution = wordNumArr[x].toUpperCase()
 }
-
 getSolution(words.four)
 console.log(solution)
 
@@ -35,7 +33,6 @@ const jumbleSolution = (solution) => {
     jumbledSolution = joinedJumbledSolution;
     return jumbledSolution
 };
-
 console.log(jumbleSolution(solution));
 
 // RENDERJUMBLEDSOLUTION FUNCTION RENDERS THE JUMBLED SOLUTION TO THE PAGE AS BUTTONS
@@ -51,19 +48,15 @@ const renderJumbledSolution = (jumbledSolution) => {
         charButton.textContent = jumbledArr[y]
         panContainer.appendChild(charButton)
     }
-}
-
+};
 renderJumbledSolution(jumbledSolution)
 
 // BUILDGUESS FUNCTION CREATES THE USERS GUESS
 
 const guessButton = document.getElementById('guess-input')
-
 guessButton.addEventListener("click", (e) => {
     console.log(e.target.getAttribute("data-id"))
 });
-
-
 
 console.log(document)
 
