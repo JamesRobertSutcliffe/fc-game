@@ -26,6 +26,7 @@ h1 {
     font-size: 50px;
     font-weight: bold;
     color: var(--secondary);
+    border-bottom: solid 5px var(--tertiary);
 }
 
 .info-container {
@@ -41,7 +42,28 @@ h1 {
 }
 
 .pan-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
     width: 50%;
     margin: auto;
     text-align: center;
+}
+
+.pan-container button {
+    background-color: var(--primary);
+    color: var(--secondary);
+    width: 9%;
+    font-weight: bold;
+    font-size: larger;
+    margin: 1%;
+    padding: 2%;
+    border: solid 3px var(--secondary);
+    transition: 0.4s;
+}
+
+.pan-container button:hover {
+    cursor: pointer;
+    scale: 110%;
+    background-color: var(--tertiary);
 }

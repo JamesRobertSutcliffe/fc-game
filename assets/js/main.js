@@ -3,6 +3,9 @@ import words from "./words.js"
 let solution = ""
 let jumbledSolution = ""
 
+
+// GAME LOGIC FUNCTIONS
+
 // GETSOLUTION FUNCTION PROVIDES THE SOLUTION WORDS //
 
 const getSolution = (wordNumArr) => {
@@ -10,7 +13,7 @@ const getSolution = (wordNumArr) => {
     solution = wordNumArr[x].toUpperCase()
 }
 
-getSolution(words.nine)
+getSolution(words.four)
 console.log(solution)
 
 // JUMBLESOLUTION FUNCTION SHUFFLES THE SELECTED SOLUTION USING THE "Durstenfeld shuffle algorithm" //
@@ -35,16 +38,35 @@ const jumbleSolution = (solution) => {
 
 console.log(jumbleSolution(solution));
 
-const renderJumbledSolution = () => {
+// RENDERJUMBLEDSOLUTION FUNCTION RENDERS THE JUMBLED SOLUTION TO THE PAGE AS BUTTONS
+
+const renderJumbledSolution = (jumbledSolution) => {
 
     let jumbledArr = [...jumbledSolution]
     for (var y = 0; y < jumbledArr.length; y++) {
         const panContainer = document.getElementById('pan-container');
         const charButton = document.createElement('button');
+        charButton.id = "test";
+        charButton.classList.add('char-button')
         charButton.textContent = jumbledArr[y]
         panContainer.appendChild(charButton)
     }
 }
 
-renderJumbledSolution()
+renderJumbledSolution(jumbledSolution)
+
+
+
+// BUILDGUESS FUNCTION CREATES THE USERS GUESS
+
+const charClass = "char-button"
+// let guessArr = [];
+
+const guessButton = document.querySelectorAll('.' + charClass)
+guessButton.addEventListener("click", function (e) {
+    console.log(e.target.id)
+})
+
+console.log(guessButton)
+
 
