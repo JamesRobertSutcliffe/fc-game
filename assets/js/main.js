@@ -59,10 +59,7 @@ renderJumbledSolution(jumbledSolution)
 
 // BUILDGUESS FUNCTION CREATES THE USERS GUESS
 
-const charClass = "char-button"
-// let guessArr = [];
-
-const guessButton = document.querySelectorAll('.' + charClass)
+const guessButton = document.querySelectorAll("")
 guessButton.addEventListener("click", function (e) {
     console.log(e.target.id)
 })
