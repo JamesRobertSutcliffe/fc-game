@@ -46,8 +46,8 @@ const renderJumbledSolution = (jumbledSolution) => {
     for (var y = 0; y < jumbledArr.length; y++) {
         const panContainer = document.getElementById('pan-container');
         const charButton = document.createElement('button');
-        charButton.id = "test";
-        charButton.classList.add('char-button')
+        charButton.id = "guess-input";
+        charButton.setAttribute('data-id', jumbledArr[y])
         charButton.textContent = jumbledArr[y]
         panContainer.appendChild(charButton)
     }
@@ -55,15 +55,16 @@ const renderJumbledSolution = (jumbledSolution) => {
 
 renderJumbledSolution(jumbledSolution)
 
-
-
 // BUILDGUESS FUNCTION CREATES THE USERS GUESS
 
-const guessButton = document.querySelectorAll("")
-guessButton.addEventListener("click", function (e) {
-    console.log(e.target.id)
-})
+const guessButton = document.getElementById('guess-input')
 
-console.log(guessButton)
+guessButton.addEventListener("click", (e) => {
+    console.log(e.target.getAttribute("data-id"))
+});
+
+
+
+console.log(document)
 
 
