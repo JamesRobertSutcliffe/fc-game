@@ -2,8 +2,7 @@ import words from "./words.js"
 
 let solution = ""
 let jumbledSolution = ""
-
-
+let guess = []
 
 // GAME LOGIC FUNCTIONS
 
@@ -60,12 +59,25 @@ const buildGuess = () => {
     const guessButton = document.querySelectorAll('#guess-input')
     guessButton.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-            console.log(e.target.getAttribute("data-id"))
+            // console.log(e.target.getAttribute("data-id"))
+            guess.push(e.target.getAttribute("data-id"))
+            // guess.join("")
+            console.log(guess.join(''))
+            checkGameState()
         })
     });
     console.log(guessButton)
 }
 
+const checkGameState = () => {
+    if (guess.join('') === solution) {
+        console.log("You win!")
+    } else {
+        return
+    }
+}
+
 buildGuess()
+
 
 
