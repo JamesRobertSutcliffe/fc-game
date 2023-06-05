@@ -67,3 +67,13 @@ h1 {
     scale: 110%;
     background-color: var(--tertiary);
 }
+
+.selected {
+    scale: 110%;
+    background-color: var(--other) !important;
+}
+
+.selected-win {
+    scale: 110%;
+    background-color: var(--tertiary) !important;
+}

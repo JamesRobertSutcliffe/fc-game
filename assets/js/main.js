@@ -12,7 +12,7 @@ const getSolution = (wordNumArr) => {
     let x = Math.floor(Math.random() * (wordNumArr.length - 1))
     solution = wordNumArr[x].toUpperCase()
 }
-getSolution(words.four)
+getSolution(words.six)
 console.log(solution)
 
 // JUMBLESOLUTION FUNCTION SHUFFLES THE SELECTED SOLUTION USING THE "Durstenfeld shuffle algorithm" //
@@ -57,23 +57,38 @@ renderJumbledSolution(jumbledSolution)
 
 const buildGuess = () => {
     const guessButton = document.querySelectorAll('#guess-input')
+    const solutionBucket = document.getElementById('solution')
     guessButton.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-            // console.log(e.target.getAttribute("data-id"))
+            e.target.classList.add('selected');
+            e.target.disabled = true;
+            if (guess[0] === "- - -") {
+                guess = []
+            }
             guess.push(e.target.getAttribute("data-id"))
-            // guess.join("")
-            console.log(guess.join(''))
-            checkGameState()
+            solutionBucket.textContent = guess.join('');
+            checkGameState();
+            solutionBucket.textContent = guess.join('');
+            console.log(guess)
         })
     });
     console.log(guessButton)
 }
 
 const checkGameState = () => {
+    const guessButton = document.querySelectorAll('#guess-input')
     if (guess.join('') === solution) {
         console.log("You win!")
-    } else {
-        return
+        guessButton.forEach((btn) => {
+            btn.classList.add('selected-win');
+        });
+    } else if (guess.join('') !== solution && guess.join('').length === solution.length) {
+        console.log("incorrect!")
+        guess = ["- - -"];
+        guessButton.forEach((btn) => {
+            btn.classList.remove('selected');
+            btn.disabled = false;
+        });
     }
 }
 

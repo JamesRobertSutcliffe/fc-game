@@ -22,3 +22,10 @@
 - Array renders to page in a crisp animated way
 - Modal appears with score and revealing the answer
 - scores are logged to local storage and high scores are get and set to a seperate page
+
+## To Do
+
+- continue development of winning / losing logic - Add delete button / add animation on win (jumbled buttons turn to unjumbled solution and turn green / pulsate?/)
+- Fix shuffle issue (sometimes displays the solution non shuffled)
+- Add timer?
+- Fix functiosn together for different length words
