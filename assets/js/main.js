@@ -70,7 +70,6 @@ const buildGuess = () => {
             console.log(guess)
         })
     });
-    console.log(guessButton)
 }
 
 // CHECKGAMESTATE FUNCTION LOGS WHETHER GAME IS WON OR LOST AND SETS NEXT PHASE
@@ -93,6 +92,34 @@ const checkGameState = () => {
 }
 
 buildGuess()
+
+const clearButton = document.querySelector('#delete');
+
+clearButton.addEventListener('click', () => {
+
+    const guessButton = document.querySelectorAll('#guess-input')
+    const solutionBucket = document.getElementById('solution')
+    console.log("chips")
+    guess = ["- - -"];
+    guessButton.forEach((btn) => {
+        btn.classList.remove('selected');
+        btn.disabled = false;
+    });
+    solutionBucket.textContent = "- - -";
+
+})
+
+// clearButton.addEventListener("click", () => {
+//     const guessButton = document.querySelectorAll('#guess-input')
+//     console.log("chips")
+//     guess = ["- - -"];
+//     guessButton.forEach((btn) => {
+//         btn.classList.remove('selected');
+//         btn.disabled = false;
+//     });
+// })
+
+console.log(clearButton)
 
 
 
