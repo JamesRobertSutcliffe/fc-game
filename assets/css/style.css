@@ -35,11 +35,32 @@ h1 {
     text-align: center;
 }
 
+/* STYLE OF CONTAINER HOLDING GUESS  */
+
 .solution-container {
     width: 50%;
     margin: auto;
     text-align: center;
 }
+
+#delete {
+    background-color: var(--secondary);
+    color: var(--primary);
+    font-weight: bold;
+    font-size: larger;
+    margin: 2%;
+    padding: 1%;
+    border: solid 3px var(--secondary);
+    transition: 0.4s;
+}
+
+#delete:hover {
+    cursor: pointer;
+    scale: 110%;
+    background-color: rgb(219, 68, 68);
+}
+
+/* STYLE OF DYNAMICALLY RENDERED BUTTONS AND CONTAINER  */
 
 .pan-container {
     display: flex;
@@ -67,6 +88,8 @@ h1 {
     scale: 110%;
     background-color: var(--tertiary);
 }
+
+/* CLASSES FOR ANIMATIONS ON OUTCOMES */
 
 .selected {
     scale: 110%;

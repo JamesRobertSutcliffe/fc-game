@@ -73,6 +73,8 @@ const buildGuess = () => {
     console.log(guessButton)
 }
 
+// CHECKGAMESTATE FUNCTION LOGS WHETHER GAME IS WON OR LOST AND SETS NEXT PHASE
+
 const checkGameState = () => {
     const guessButton = document.querySelectorAll('#guess-input')
     if (guess.join('') === solution) {
