@@ -12,7 +12,7 @@ const getSolution = (wordNumArr) => {
     let x = Math.floor(Math.random() * (wordNumArr.length - 1))
     solution = wordNumArr[x].toUpperCase()
 }
-getSolution(words.six)
+getSolution(words.four)
 console.log(solution)
 
 // JUMBLESOLUTION FUNCTION SHUFFLES THE SELECTED SOLUTION USING THE "Durstenfeld shuffle algorithm" //
@@ -62,9 +62,7 @@ const buildGuess = () => {
         btn.addEventListener("click", (e) => {
             e.target.classList.add('selected');
             e.target.disabled = true;
-            if (guess[0] === "- - -") {
-                guess = []
-            }
+            (guess[0] === "- - -") ? guess = [] : guess = guess;
             guess.push(e.target.getAttribute("data-id"))
             solutionBucket.textContent = guess.join('');
             checkGameState();
