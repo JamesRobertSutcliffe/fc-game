@@ -3,6 +3,7 @@ import words from "./words.js"
 let solution = ""
 let jumbledSolution = ""
 let guess = []
+const clearButton = document.querySelector('#delete');
 
 // GAME LOGIC FUNCTIONS
 
@@ -81,6 +82,7 @@ const checkGameState = () => {
         guessButton.forEach((btn) => {
             btn.classList.add('selected-win');
         });
+        clearButton.disabled = true;
     } else if (guess.join('') !== solution && guess.join('').length === solution.length) {
         console.log("incorrect!")
         guess = ["- - -"];
@@ -93,14 +95,10 @@ const checkGameState = () => {
 
 buildGuess()
 
-const clearButton = document.querySelector('#delete');
-
 clearButton.addEventListener('click', () => {
-
     const guessButton = document.querySelectorAll('#guess-input')
     const solutionBucket = document.getElementById('solution')
-    console.log("chips")
-    guess = ["- - -"];
+    guess = [""];
     guessButton.forEach((btn) => {
         btn.classList.remove('selected');
         btn.disabled = false;
@@ -108,16 +106,6 @@ clearButton.addEventListener('click', () => {
     solutionBucket.textContent = "- - -";
 
 })
-
-// clearButton.addEventListener("click", () => {
-//     const guessButton = document.querySelectorAll('#guess-input')
-//     console.log("chips")
-//     guess = ["- - -"];
-//     guessButton.forEach((btn) => {
-//         btn.classList.remove('selected');
-//         btn.disabled = false;
-//     });
-// })
 
 console.log(clearButton)
 
