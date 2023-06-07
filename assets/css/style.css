@@ -96,7 +96,39 @@ h1 {
     background-color: var(--other) !important;
 }
 
+@keyframes selected-win {
+    0% {
+        scale: 100%;
+        background-color: var(--other);
+    }
+
+    20% {
+        scale: 115%;
+        background-color: var(--other);
+    }
+
+    40% {
+        scale: 100%;
+        background-color: var(--other);
+    }
+
+    85% {
+        scale: 100%;
+        background-color: var(--other);
+    }
+
+    90% {
+        scale: 115%;
+        background-color: var(--other);
+    }
+
+    100% {
+        scale: 110%;
+        background-color: var(--tertiary);
+    }
+}
+
 .selected-win {
-    scale: 110%;
-    background-color: var(--tertiary) !important;
+    background-color: var(--other);
+    animation: selected-win 3s linear 0s normal forwards;
 }

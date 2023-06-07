@@ -81,6 +81,7 @@ const checkGameState = () => {
         console.log("You win!")
         guessButton.forEach((btn) => {
             btn.classList.add('selected-win');
+            btn.classList.remove('selected');
         });
         clearButton.disabled = true;
     } else if (guess.join('') !== solution && guess.join('').length === solution.length) {
