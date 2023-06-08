@@ -29,3 +29,9 @@
 - Fix shuffle issue (sometimes displays the solution non shuffled)
 - Add timer?
 - Fix functiosn together for different length words
+
+
+-- next
+
+Change win animation from guess to solution then visual stretch and colour change
+create lose animation with buttons flashing red
