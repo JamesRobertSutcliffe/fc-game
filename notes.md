@@ -34,3 +34,6 @@
 -- next
 
 create lose animation with buttons flashing red
+-- do we need win message?
+-- look into fixing shuffle issues
+-- check progess then move tying game together (compartmentalise everything first)
