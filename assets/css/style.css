@@ -91,20 +91,43 @@ h1 {
 
 /* CLASSES FOR ANIMATIONS ON OUTCOMES */
 
+@keyframes pop-on {
+    0% {
+        scale: 10%;
+        background-color: var(--tertiary);
+    }
+
+    80% {
+        scale: 110%;
+        background-color: var(--other);
+    }
+
+    100% {
+        scale: 100%;
+        background-color: var(--primary);
+    }
+}
+
+.button-intro {
+    animation: pop-on 1s 0s normal;
+}
+
 .selected {
-    scale: 110%;
+    scale: 110% !important;
     background-color: var(--other) !important;
 }
 
-@keyframes selected-win {
+/* ANIMATION ON WIN */
+
+@keyframes pop-color {
     0% {
-        scale: 100%;
-        background-color: var(--other);
+        scale: 0%;
+        background-color: var(--tertiary);
     }
 
     20% {
         scale: 115%;
-        background-color: var(--other);
+        background-color: var(--tertiary);
     }
 
     40% {
@@ -120,15 +143,23 @@ h1 {
     90% {
         scale: 115%;
         background-color: var(--other);
+        color: var(--secondary);
+        border: solid 3px var(--secondary);
     }
 
     100% {
         scale: 110%;
-        background-color: var(--tertiary);
+        background-color: rgb(74, 221, 74);
+        border: solid 3px var(--primary);
+        color: var(--primary);
     }
 }
 
 .selected-win {
     background-color: var(--other);
-    animation: selected-win 3s linear 0s normal forwards;
+    animation: pop-color 3s linear 0s normal forwards;
+}
+
+.selected-win:hover {
+    background-color: none;
 }

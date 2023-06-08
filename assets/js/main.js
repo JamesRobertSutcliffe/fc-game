@@ -46,11 +46,11 @@ const renderJumbledSolution = (jumbledSolution) => {
         const panContainer = document.getElementById('pan-container');
         const charButton = document.createElement('button');
         charButton.id = "guess-input";
+        charButton.classList.add('button-intro')
         charButton.setAttribute('data-id', jumbledArr[y])
         charButton.textContent = jumbledArr[y]
         panContainer.appendChild(charButton)
     }
-
 };
 renderJumbledSolution(jumbledSolution)
 
@@ -73,16 +73,29 @@ const buildGuess = () => {
     });
 }
 
+
+const renderSolution = (solution) => {
+
+
+    for (var y = 0; y < solution.length; y++) {
+        const panContainer = document.getElementById('pan-container');
+        const charButton = document.createElement('button');
+        charButton.id = "guess-input";
+        charButton.classList.add('selected-win')
+        charButton.textContent = solution[y]
+        panContainer.appendChild(charButton)
+    }
+};
+
 // CHECKGAMESTATE FUNCTION LOGS WHETHER GAME IS WON OR LOST AND SETS NEXT PHASE
 
 const checkGameState = () => {
     const guessButton = document.querySelectorAll('#guess-input')
+    const panContainer = document.getElementById('pan-container')
     if (guess.join('') === solution) {
         console.log("You win!")
-        guessButton.forEach((btn) => {
-            btn.classList.add('selected-win');
-            btn.classList.remove('selected');
-        });
+        panContainer.innerHTML = ""
+        renderSolution(solution)
         clearButton.disabled = true;
     } else if (guess.join('') !== solution && guess.join('').length === solution.length) {
         console.log("incorrect!")
@@ -95,6 +108,8 @@ const checkGameState = () => {
 }
 
 buildGuess()
+
+// CLEARS CURRENT GUESS ON BUTTON PRESS
 
 clearButton.addEventListener('click', () => {
     const guessButton = document.querySelectorAll('#guess-input')
