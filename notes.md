@@ -25,7 +25,8 @@
 
 ## To Do
 
-- continue development of winning / losing logic - Add delete button / add animation on win (jumbled buttons turn to unjumbled solution and turn green / pulsate?/)
+- continue development of winning / losing logic - 
+- Think about colour of heading underline
 - Fix shuffle issue (sometimes displays the solution non shuffled)
 - Add timer?
 - Fix functiosn together for different length words
@@ -33,7 +34,7 @@
 
 -- next
 
-create lose animation with buttons flashing red
+--!!create lose animation with buttons flashing red!!
 -- do we need win message?
 -- look into fixing shuffle issues
 -- check progess then move tying game together (compartmentalise everything first)

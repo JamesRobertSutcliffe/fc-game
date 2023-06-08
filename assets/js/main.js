@@ -74,9 +74,9 @@ const buildGuess = () => {
 }
 
 
+// RENDERSOLUTION re-renders the solution onto page in button format on win
+
 const renderSolution = (solution) => {
-
-
     for (var y = 0; y < solution.length; y++) {
         const panContainer = document.getElementById('pan-container');
         const charButton = document.createElement('button');
@@ -86,6 +86,10 @@ const renderSolution = (solution) => {
         panContainer.appendChild(charButton)
     }
 };
+
+const flashRed = () => {
+
+}
 
 // CHECKGAMESTATE FUNCTION LOGS WHETHER GAME IS WON OR LOST AND SETS NEXT PHASE
 
