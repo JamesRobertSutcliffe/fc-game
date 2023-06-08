@@ -162,4 +162,5 @@ h1 {
 
 .selected-win:hover {
     background-color: none;
+    pointer-events: none;
 }

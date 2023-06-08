@@ -33,8 +33,4 @@
 
 -- next
 
-
-Make buttons animate on 1 by one
-Guess bucket initially oopen with level x
-Change win animation from guess to solution then visual stretch and colour change
 create lose animation with buttons flashing red
