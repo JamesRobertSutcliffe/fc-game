@@ -13,7 +13,7 @@ const getSolution = (wordNumArr) => {
     let x = Math.floor(Math.random() * (wordNumArr.length - 1))
     solution = wordNumArr[x].toUpperCase()
 }
-getSolution(words.five)
+getSolution(words.four)
 console.log(solution)
 
 // JUMBLESOLUTION FUNCTION SHUFFLES THE SELECTED SOLUTION USING THE "Durstenfeld shuffle algorithm" //
