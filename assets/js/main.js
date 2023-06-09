@@ -13,7 +13,7 @@ const getSolution = (wordNumArr) => {
     let x = Math.floor(Math.random() * (wordNumArr.length - 1))
     solution = wordNumArr[x].toUpperCase()
 }
-getSolution(words.nine)
+getSolution(words.five)
 console.log(solution)
 
 // JUMBLESOLUTION FUNCTION SHUFFLES THE SELECTED SOLUTION USING THE "Durstenfeld shuffle algorithm" //
@@ -88,7 +88,12 @@ const renderSolution = (solution) => {
 };
 
 const flashRed = () => {
-
+    const guessButton = document.querySelectorAll('#guess-input')
+    guessButton.forEach((btn) => {
+        btn.classList.remove('selected');
+        btn.classList.add('incorrect')
+        btn.disabled = false;
+    });
 }
 
 // CHECKGAMESTATE FUNCTION LOGS WHETHER GAME IS WON OR LOST AND SETS NEXT PHASE
@@ -97,17 +102,12 @@ const checkGameState = () => {
     const guessButton = document.querySelectorAll('#guess-input')
     const panContainer = document.getElementById('pan-container')
     if (guess.join('') === solution) {
-        console.log("You win!")
         panContainer.innerHTML = ""
         renderSolution(solution)
         clearButton.disabled = true;
     } else if (guess.join('') !== solution && guess.join('').length === solution.length) {
-        console.log("incorrect!")
         guess = ["- - -"];
-        guessButton.forEach((btn) => {
-            btn.classList.remove('selected');
-            btn.disabled = false;
-        });
+        flashRed();
     }
 }
 
@@ -118,7 +118,7 @@ buildGuess()
 clearButton.addEventListener('click', () => {
     const guessButton = document.querySelectorAll('#guess-input')
     const solutionBucket = document.getElementById('solution')
-    guess = [""];
+    guess = [];
     guessButton.forEach((btn) => {
         btn.classList.remove('selected');
         btn.disabled = false;

@@ -168,3 +168,21 @@ h1 {
 }
 
 /* ANIMATION ON INCORRECT */
+
+@keyframes flash-red {
+    0% {
+        background-color: var(--other);
+    }
+
+    80% {
+        background-color: rgb(219, 68, 68);
+    }
+
+    100% {
+        background-color: var(--primary);
+    }
+}
+
+.incorrect {
+    animation: flash-red 0.5s 0s normal;
+}
