@@ -89,7 +89,14 @@ h1 {
     background-color: var(--tertiary);
 }
 
+.selected {
+    scale: 110% !important;
+    background-color: var(--other) !important;
+}
+
 /* CLASSES FOR ANIMATIONS ON OUTCOMES */
+
+/* INTRO ANIMATION */
 
 @keyframes pop-on {
     0% {
@@ -110,11 +117,6 @@ h1 {
 
 .button-intro {
     animation: pop-on 1s 0s normal;
-}
-
-.selected {
-    scale: 110% !important;
-    background-color: var(--other) !important;
 }
 
 /* ANIMATION ON WIN */
@@ -164,3 +166,5 @@ h1 {
     background-color: none;
     pointer-events: none;
 }
+
+/* ANIMATION ON INCORRECT */
