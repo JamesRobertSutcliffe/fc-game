@@ -36,6 +36,7 @@ const jumbleSolution = (solution) => {
     return jumbledSolution
 };
 console.log(jumbleSolution(solution));
+jumbleSolution(solution)
 
 // RENDERJUMBLEDSOLUTION FUNCTION RENDERS THE JUMBLED SOLUTION TO THE PAGE AS BUTTONS
 
@@ -94,6 +95,12 @@ const flashRed = () => {
         btn.classList.add('incorrect')
         btn.disabled = false;
     });
+    setTimeout(() => {
+        guessButton.forEach((btn) => {
+            btn.classList.remove('button-intro');
+            btn.classList.remove('incorrect');
+        });
+    }, 1000)
 }
 
 // CHECKGAMESTATE FUNCTION LOGS WHETHER GAME IS WON OR LOST AND SETS NEXT PHASE
