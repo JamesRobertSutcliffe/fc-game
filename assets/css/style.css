@@ -26,7 +26,7 @@ h1 {
     font-size: 50px;
     font-weight: bold;
     color: var(--secondary);
-    border-bottom: solid 5px var(--tertiary);
+    border-bottom: solid 5px var(--other);
 }
 
 .info-container {
@@ -94,12 +94,12 @@ h1 {
 @keyframes pop-on {
     0% {
         scale: 10%;
-        background-color: var(--tertiary);
+        background-color: var(--other);
     }
 
     80% {
         scale: 110%;
-        background-color: var(--other);
+        background-color: var(--tertiary);
     }
 
     100% {
@@ -122,27 +122,27 @@ h1 {
 @keyframes pop-color {
     0% {
         scale: 0%;
-        background-color: var(--tertiary);
+        background-color: var(--other);
     }
 
     20% {
         scale: 115%;
-        background-color: var(--tertiary);
+        background-color: var(--other);
     }
 
     40% {
         scale: 100%;
-        background-color: var(--other);
+        background-color: var(--tertiary);
     }
 
     85% {
         scale: 100%;
-        background-color: var(--other);
+        background-color: var(--tertiary);
     }
 
     90% {
         scale: 115%;
-        background-color: var(--other);
+        background-color: var(--tertiary);
         color: var(--secondary);
         border: solid 3px var(--secondary);
     }
