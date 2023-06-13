@@ -25,12 +25,11 @@
 
 ## To Do
 
-- continue development of winning / losing logic - 
-- Think about colour of heading underline
 - Fix shuffle issue (sometimes displays the solution non shuffled)
-- Add timer?
 - Fix functiosn together for different length words
-
+- Add timer?
+- Add scores to local storage
+- add different game modes? 
 
 -- next
 
