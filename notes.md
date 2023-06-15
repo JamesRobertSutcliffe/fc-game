@@ -29,6 +29,7 @@
 - Fix functiosn together for different length words
 - Add timer?
 - Add scores to local storage
+- Add landing page
 - add different game modes? 
 
 -- next
