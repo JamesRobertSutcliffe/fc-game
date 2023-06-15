@@ -1,13 +1,9 @@
 import words from "./words.js"
-import { test, testes } from "./logic.js"
 
 let solution = ""
 let jumbledSolution = ""
 let guess = []
 const clearButton = document.querySelector('#delete');
-
-testes()
-console.log(test)
 
 // GAME LOGIC FUNCTIONS
 
