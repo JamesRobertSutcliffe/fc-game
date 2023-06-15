@@ -4,6 +4,7 @@ let solution = ""
 let jumbledSolution = ""
 let guess = []
 const clearButton = document.querySelector('#delete');
+let level = 3;
 
 
 // GAME LOGIC FUNCTIONS //
@@ -109,6 +110,13 @@ const checkGameState = () => {
         panContainer.innerHTML = ""
         renderSolution(solution)
         clearButton.disabled = true;
+        level += 1;
+        guess = ["- - -"]
+        setTimeout(() => {
+            panContainer.innerHTML = ""
+            game();
+            clearButton.disabled = false;
+        }, 4000)
     } else if (guess.join('') !== solution && guess.join('').length === solution.length) {
         guess = ["- - -"];
         flashRed();
@@ -142,7 +150,15 @@ function gamePlay(level) {
 
 
 function game() {
-    gamePlay(words.three)
+    if (level === 3) {
+        gamePlay(words.three)
+    } if (level === 4) {
+        gamePlay(words.four)
+    } if (level === 5) {
+        gamePlay(words.five)
+    } else {
+        return;
+    }
 }
 
 game()
