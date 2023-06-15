@@ -5,7 +5,7 @@ let jumbledSolution = ""
 let guess = []
 const clearButton = document.querySelector('#delete');
 
-// GAME LOGIC FUNCTIONS
+// GAME LOGIC FUNCTIONS //
 
 // GETSOLUTION FUNCTION PROVIDES THE SOLUTION WORDS //
 
@@ -13,8 +13,7 @@ const getSolution = (wordNumArr) => {
     let x = Math.floor(Math.random() * (wordNumArr.length - 1))
     solution = wordNumArr[x].toUpperCase()
 }
-getSolution(words.four)
-console.log(solution)
+
 
 // JUMBLESOLUTION FUNCTION SHUFFLES THE SELECTED SOLUTION USING THE "Durstenfeld shuffle algorithm" //
 
@@ -35,8 +34,6 @@ const jumbleSolution = (solution) => {
     jumbledSolution = joinedJumbledSolution;
     return jumbledSolution
 };
-console.log(jumbleSolution(solution));
-jumbleSolution(solution)
 
 // RENDERJUMBLEDSOLUTION FUNCTION RENDERS THE JUMBLED SOLUTION TO THE PAGE AS BUTTONS
 
@@ -53,7 +50,6 @@ const renderJumbledSolution = (jumbledSolution) => {
         panContainer.appendChild(charButton)
     }
 };
-renderJumbledSolution(jumbledSolution)
 
 // BUILDGUESS FUNCTION CREATES THE USERS GUESS
 
@@ -88,6 +84,8 @@ const renderSolution = (solution) => {
     }
 };
 
+// FLASH RED FLASHES RED ANIMATION ON INCORRECT GUESS
+
 const flashRed = () => {
     const guessButton = document.querySelectorAll('#guess-input')
     guessButton.forEach((btn) => {
@@ -118,8 +116,6 @@ const checkGameState = () => {
     }
 }
 
-buildGuess()
-
 // CLEARS CURRENT GUESS ON BUTTON PRESS
 
 clearButton.addEventListener('click', () => {
@@ -134,7 +130,15 @@ clearButton.addEventListener('click', () => {
 
 })
 
-console.log(clearButton)
+// LEVELS AND SCORES
 
+function three() {
+    getSolution(words.three)
+    console.log(solution)
+    console.log(jumbleSolution(solution));
+    jumbleSolution(solution)
+    renderJumbledSolution(jumbledSolution)
+    buildGuess()
+};
 
-
+three()
