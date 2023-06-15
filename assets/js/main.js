@@ -5,6 +5,7 @@ let jumbledSolution = ""
 let guess = []
 const clearButton = document.querySelector('#delete');
 
+
 // GAME LOGIC FUNCTIONS //
 
 // GETSOLUTION FUNCTION PROVIDES THE SOLUTION WORDS //
@@ -70,7 +71,6 @@ const buildGuess = () => {
     });
 }
 
-
 // RENDERSOLUTION re-renders the solution onto page in button format on win
 
 const renderSolution = (solution) => {
@@ -104,7 +104,6 @@ const flashRed = () => {
 // CHECKGAMESTATE FUNCTION LOGS WHETHER GAME IS WON OR LOST AND SETS NEXT PHASE
 
 const checkGameState = () => {
-    const guessButton = document.querySelectorAll('#guess-input')
     const panContainer = document.getElementById('pan-container')
     if (guess.join('') === solution) {
         panContainer.innerHTML = ""
@@ -132,8 +131,8 @@ clearButton.addEventListener('click', () => {
 
 // LEVELS AND SCORES
 
-function three() {
-    getSolution(words.three)
+function gamePlay(level) {
+    getSolution(level)
     console.log(solution)
     console.log(jumbleSolution(solution));
     jumbleSolution(solution)
@@ -141,4 +140,9 @@ function three() {
     buildGuess()
 };
 
-three()
+
+function game() {
+    gamePlay(words.three)
+}
+
+game()
