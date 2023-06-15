@@ -25,14 +25,12 @@
 
 ## To Do
 
+- Add timer
+- create logic for loss on timer hitting 0
+- Create win / lose modals
+- Add scores to local storage via modals
+- create scores pages that renders from local storage
+- Add landing page - select game mode
 - Fix shuffle issue (sometimes displays the solution non shuffled)
-- Fix functiosn together for different length words
-- Add timer?
-- Add scores to local storage
-- Add landing page
 - add different game modes? 
-
--- next
-
--- look into fixing shuffle issues
--- check progess then move tying game together (compartmentalise everything first)
+- compartmentalise?

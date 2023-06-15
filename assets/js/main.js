@@ -173,6 +173,7 @@ function countGame() {
             countGamePlay(words.nine);
             break;
         case 10:
+            // Win modal appears cogratulating user / prompts to input initials to log score / displays grid with winning words
             break;
     }
 }
