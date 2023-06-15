@@ -1,6 +1,7 @@
 import words from "./words.js"
 
 let solution = ""
+let solutionArray = [];
 let jumbledSolution = ""
 let guess = []
 const clearButton = document.querySelector('#delete');
@@ -14,8 +15,9 @@ let level = 3;
 const getSolution = (wordNumArr) => {
     let x = Math.floor(Math.random() * (wordNumArr.length - 1))
     solution = wordNumArr[x].toUpperCase()
+    solutionArray.push(solution);
+    console.log(solutionArray)
 }
-
 
 // JUMBLESOLUTION FUNCTION SHUFFLES THE SELECTED SOLUTION USING THE "Durstenfeld shuffle algorithm" //
 
@@ -67,7 +69,6 @@ const buildGuess = () => {
             solutionBucket.textContent = guess.join('');
             checkGameState();
             solutionBucket.textContent = guess.join('');
-            console.log(guess)
         })
     });
 }
@@ -114,7 +115,7 @@ const checkGameState = () => {
         guess = ["- - -"]
         setTimeout(() => {
             panContainer.innerHTML = ""
-            game();
+            countGame();
             clearButton.disabled = false;
         }, 4000)
     } else if (guess.join('') !== solution && guess.join('').length === solution.length) {
@@ -139,7 +140,7 @@ clearButton.addEventListener('click', () => {
 
 // LEVELS AND SCORES
 
-function gamePlay(level) {
+function countGamePlay(level) {
     getSolution(level)
     console.log(solution)
     console.log(jumbleSolution(solution));
@@ -148,17 +149,31 @@ function gamePlay(level) {
     buildGuess()
 };
 
-
-function game() {
-    if (level === 3) {
-        gamePlay(words.three)
-    } if (level === 4) {
-        gamePlay(words.four)
-    } if (level === 5) {
-        gamePlay(words.five)
-    } else {
-        return;
+function countGame() {
+    switch (level) {
+        case 3:
+            countGamePlay(words.three)
+            break;
+        case 4:
+            countGamePlay(words.four);
+            break;
+        case 5:
+            countGamePlay(words.five);
+            break;
+        case 6:
+            countGamePlay(words.six);
+            break;
+        case 7:
+            countGamePlay(words.seven);
+            break;
+        case 8:
+            countGamePlay(words.eight);
+            break;
+        case 9:
+            countGamePlay(words.nine);
+            break;
+        case 10:
+            break;
     }
 }
-
-game()
+countGame()
