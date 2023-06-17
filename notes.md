@@ -25,9 +25,8 @@
 
 ## To Do
 
-- Add timer - add CSS to this
-- create logic for loss on timer hitting 0 (!)
-- Create win / lose modals (display levels somewhere) / (think about animations when modals appear / on loss animtate red and disable buttons)
+- Create code to display each level when new level is booted
+- Create modals (see comments in win / lose functions)
 - Add scores to local storage via modals
 - create scores pages that renders from local storage
 - Add landing page - select game mode

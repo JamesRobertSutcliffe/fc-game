@@ -63,6 +63,10 @@ h1 {
     background-color: rgb(219, 68, 68);
 }
 
+.timer-red {
+    color: red;
+}
+
 /* STYLE OF DYNAMICALLY RENDERED BUTTONS AND CONTAINER  */
 
 .pan-container {

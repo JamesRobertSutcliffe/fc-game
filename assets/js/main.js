@@ -7,6 +7,7 @@ let guess = []
 const clearButton = document.querySelector('#delete');
 let level = 3;
 let levelUp = false;
+const timerDOM = document.getElementById("timer")
 
 
 // GAME LOGIC FUNCTIONS //
@@ -144,10 +145,18 @@ clearButton.addEventListener('click', () => {
 
 const gameLose = () => {
     console.log("You lose!");
+    // First use render solution function that appears as red // 
+    // Then modal appears stating game over / level / words completeted //
+    // prompt to submit high scores // 
+    // Link to high scores page or to play again // 
 };
 
 const gameWin = () => {
+    // 
     console.log("you win!")
+    // modal appears stating game completed / level / words completeted //
+    // prompt to submit high scores // 
+    // Link to high scores page or to play again // 
 }
 
 // Countdown displays timer and defines whether game is lost or to move up to next level
@@ -155,7 +164,8 @@ const gameWin = () => {
 const countdownTimer = () => {
     var timer = Math.min(30, 60);
     var countdownInterval = setInterval(function () {
-        document.getElementById("timer").textContent = "00:" + (timer < 10 ? "0" + timer : timer);
+        timerDOM.textContent = "00:" + (timer < 10 ? "0" + timer : timer);
+        timer < 11 ? timerDOM.classList.add("timer-red") : timerDOM.classList.remove("timer-red");
         if (--timer < 0) {
             clearInterval(countdownInterval);
             gameLose();
@@ -206,6 +216,7 @@ const countGame = () => {
             break;
     }
 }
+
 countGame();
 
 
