@@ -178,3 +178,7 @@ function countGame() {
     }
 }
 countGame()
+
+// timer ---
+
+// use while loop
