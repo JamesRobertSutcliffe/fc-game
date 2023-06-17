@@ -25,7 +25,6 @@
 
 ## To Do
 
-- Create code to display each level when new level is booted
 - Create modals (see comments in win / lose functions)
 - Add scores to local storage via modals
 - create scores pages that renders from local storage

@@ -7,7 +7,9 @@ let guess = []
 const clearButton = document.querySelector('#delete');
 let level = 3;
 let levelUp = false;
-const timerDOM = document.getElementById("timer")
+const timerDOM = document.getElementById("timer");
+const levelRender = document.getElementById("level");
+let levelText = `Level ${level}`;
 
 
 // GAME LOGIC FUNCTIONS //
@@ -18,7 +20,6 @@ const getSolution = (wordNumArr) => {
     let x = Math.floor(Math.random() * (wordNumArr.length - 1))
     solution = wordNumArr[x].toUpperCase()
     solutionArray.push(solution);
-    console.log(solutionArray)
 }
 
 // JUMBLESOLUTION FUNCTION SHUFFLES THE SELECTED SOLUTION USING THE "Durstenfeld shuffle algorithm" //
@@ -115,7 +116,7 @@ const checkGameState = () => {
         renderSolution(solution)
         clearButton.disabled = true;
         level += 1;
-        guess = ["- - -"]
+        guess = ["- - -"];
         setTimeout(() => {
             panContainer.innerHTML = ""
             countGame();
@@ -176,16 +177,23 @@ const countdownTimer = () => {
     }, 1000);
 }
 
+// LEVEL DISPLAY displays correct level on page
+
+const levelDisplay = () => {
+    levelText = `Level ${level}`
+    levelRender.innerHTML = levelText;
+}
+
 // LEVELS NAVIGATION
 
 const countGamePlay = (level) => {
     getSolution(level);
-    console.log(solution);
-    console.log(jumbleSolution(solution));
     jumbleSolution(solution);
     renderJumbledSolution(jumbledSolution);
+    levelDisplay();
     countdownTimer();
     buildGuess();
+    console.log(solution, solutionArray);
 };
 
 const countGame = () => {
