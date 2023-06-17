@@ -6,6 +6,7 @@ let jumbledSolution = ""
 let guess = []
 const clearButton = document.querySelector('#delete');
 let level = 3;
+let levelUp = false;
 
 
 // GAME LOGIC FUNCTIONS //
@@ -108,6 +109,7 @@ const flashRed = () => {
 const checkGameState = () => {
     const panContainer = document.getElementById('pan-container')
     if (guess.join('') === solution) {
+        levelUp = true;
         panContainer.innerHTML = ""
         renderSolution(solution)
         clearButton.disabled = true;
@@ -138,21 +140,48 @@ clearButton.addEventListener('click', () => {
 
 })
 
-// LEVELS AND SCORES
+// GAME LOSE / WIN DISPLAYS MODAL ON COUNTDOWN EXPIRY OR GAME COMPLETION
 
-function countGamePlay(level) {
-    getSolution(level)
-    console.log(solution)
-    console.log(jumbleSolution(solution));
-    jumbleSolution(solution)
-    renderJumbledSolution(jumbledSolution)
-    buildGuess()
+const gameLose = () => {
+    console.log("You lose!");
 };
 
-function countGame() {
+const gameWin = () => {
+    console.log("you win!")
+}
+
+// Countdown displays timer and defines whether game is lost or to move up to next level
+
+const countdownTimer = () => {
+    var timer = Math.min(30, 60);
+    var countdownInterval = setInterval(function () {
+        document.getElementById("timer").textContent = "00:" + (timer < 10 ? "0" + timer : timer);
+        if (--timer < 0) {
+            clearInterval(countdownInterval);
+            gameLose();
+        } if (levelUp === true) {
+            clearInterval(countdownInterval);
+            levelUp = false;
+        }
+    }, 1000);
+}
+
+// LEVELS NAVIGATION
+
+const countGamePlay = (level) => {
+    getSolution(level);
+    console.log(solution);
+    console.log(jumbleSolution(solution));
+    jumbleSolution(solution);
+    renderJumbledSolution(jumbledSolution);
+    countdownTimer();
+    buildGuess();
+};
+
+const countGame = () => {
     switch (level) {
         case 3:
-            countGamePlay(words.three)
+            countGamePlay(words.three);
             break;
         case 4:
             countGamePlay(words.four);
@@ -173,12 +202,12 @@ function countGame() {
             countGamePlay(words.nine);
             break;
         case 10:
-            // Win modal appears cogratulating user / prompts to input initials to log score / displays grid with winning words
+            gameWin();
             break;
     }
 }
-countGame()
+countGame();
 
-// timer ---
 
-// use while loop
+
+

@@ -25,9 +25,9 @@
 
 ## To Do
 
-- Add timer
-- create logic for loss on timer hitting 0
-- Create win / lose modals
+- Add timer - add CSS to this
+- create logic for loss on timer hitting 0 (!)
+- Create win / lose modals (display levels somewhere)
 - Add scores to local storage via modals
 - create scores pages that renders from local storage
 - Add landing page - select game mode
