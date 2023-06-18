@@ -25,7 +25,7 @@
 
 ## To Do
 
-- Create modals (see comments in win / lose functions)
+- Create modals (see comments in win / lose functions) - next (try and compartmentalise?)
 - Add scores to local storage via modals
 - create scores pages that renders from local storage
 - Add landing page - select game mode
