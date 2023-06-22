@@ -1,15 +1,15 @@
 import words from "./words.js"
 
+const clearButton = document.querySelector('#delete');
+const timerDOM = document.getElementById("timer");
+const levelRender = document.getElementById("level");
+const panContainer = document.getElementById('pan-container')
 let solution = ""
 let solutionArray = [];
 let jumbledSolution = ""
 let guess = []
-const clearButton = document.querySelector('#delete');
 let level = 3;
 let levelUp = false;
-const timerDOM = document.getElementById("timer");
-const levelRender = document.getElementById("level");
-const panContainer = document.getElementById('pan-container')
 let levelText = `Level ${level}`;
 
 
