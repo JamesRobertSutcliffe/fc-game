@@ -117,11 +117,13 @@ const checkGameState = () => {
         clearButton.disabled = true;
         level += 1;
         guess = ["- - -"];
-        setTimeout(() => {
-            panContainer.innerHTML = ""
-            countGame();
-            clearButton.disabled = false;
-        }, 4000)
+        if (level < 10) {
+            setTimeout(() => {
+                panContainer.innerHTML = ""
+                countGame();
+                clearButton.disabled = false;
+            }, 4000)
+        };
     } else if (guess.join('') !== solution && guess.join('').length === solution.length) {
         guess = ["- - -"];
         flashRed();
