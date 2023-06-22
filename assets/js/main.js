@@ -9,6 +9,7 @@ let level = 3;
 let levelUp = false;
 const timerDOM = document.getElementById("timer");
 const levelRender = document.getElementById("level");
+const panContainer = document.getElementById('pan-container')
 let levelText = `Level ${level}`;
 
 
@@ -78,12 +79,12 @@ const buildGuess = () => {
 
 // RENDERSOLUTION re-renders the solution onto page in button format on win
 
-const renderSolution = (solution) => {
+const renderSolution = (solution, addClass) => {
     for (var y = 0; y < solution.length; y++) {
         const panContainer = document.getElementById('pan-container');
         const charButton = document.createElement('button');
         charButton.id = "guess-input";
-        charButton.classList.add('selected-win')
+        charButton.classList.add(addClass)
         charButton.textContent = solution[y]
         panContainer.appendChild(charButton)
     }
@@ -109,11 +110,10 @@ const flashRed = () => {
 // CHECKGAMESTATE FUNCTION LOGS WHETHER GAME IS WON OR LOST AND SETS NEXT PHASE
 
 const checkGameState = () => {
-    const panContainer = document.getElementById('pan-container')
     if (guess.join('') === solution) {
         levelUp = true;
         panContainer.innerHTML = ""
-        renderSolution(solution)
+        renderSolution(solution, "selected-win")
         clearButton.disabled = true;
         level += 1;
         guess = ["- - -"];
@@ -146,7 +146,9 @@ clearButton.addEventListener('click', () => {
 
 const gameLose = () => {
     console.log("You lose!");
+    panContainer.innerHTML = "";
     // First use render solution function that appears as red // 
+    renderSolution(solution, "lose")
     // Then modal appears stating game over / level / words completeted //
     // prompt to submit high scores // 
     // Link to high scores page or to play again // 

@@ -193,3 +193,44 @@ h1 {
 .incorrect {
     animation: flash-red 0.5s 0s normal;
 }
+
+
+@keyframes pop-color-red {
+    0% {
+        scale: 0%;
+        background-color: var(--other);
+    }
+
+    20% {
+        scale: 115%;
+        background-color: var(--other);
+    }
+
+    40% {
+        scale: 100%;
+        background-color: var(--tertiary);
+    }
+
+    85% {
+        scale: 100%;
+        background-color: var(--tertiary);
+    }
+
+    90% {
+        scale: 115%;
+        background-color: var(--tertiary);
+        color: var(--secondary);
+        border: solid 3px var(--secondary);
+    }
+
+    100% {
+        scale: 110%;
+        background-color: rgb(255, 0, 0);
+        border: solid 3px var(--primary);
+        color: var(--primary);
+    }
+}
+
+.lose {
+    animation: pop-color-red 3s linear 0s normal forwards;
+}
