@@ -212,6 +212,7 @@ const countGame = () => {
             break;
         case 5:
             countGamePlay(words.five);
+            winModalRender();
             break;
         case 6:
             countGamePlay(words.six);
@@ -232,6 +233,27 @@ const countGame = () => {
 }
 
 countGame();
+
+// MODALS LOGIC
+
+const winModal = document.getElementById('win-modal');
+const closeWinModal = document.getElementById('win-modal-close');
+const solutionList = document.getElementById('solution-list');
+
+const winModalRender = () => {
+    winModal.showModal();
+    let solutions = ""
+    for (let i = 0; i < solutionArray.length; i++) {
+        solutions += solutionArray[i] + " "
+        solutionList.textContent = "YOUR SOLUTIONS: " + solutions;
+    }
+}
+
+
+
+closeWinModal.addEventListener('click', () => {
+    winModal.close();
+})
 
 
 

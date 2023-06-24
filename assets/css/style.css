@@ -234,3 +234,37 @@ h1 {
 .lose {
     animation: pop-color-red 3s linear 0s normal forwards;
 }
+
+/* MODAL */
+
+.modal {
+    width: 50%;
+    text-align: center;
+    border: solid 5px var(--secondary);
+    overflow: scroll;
+}
+
+.modal h1 {
+    padding: 5px;
+    margin: 5px
+}
+
+.modal button {
+    margin: auto;
+    padding: 5px;
+    border-radius: 5%;
+    font-size: 20px;
+    font-weight: bolder;
+    transition: 0.3s;
+}
+
+.modal button:hover {
+    scale: 110% !important;
+    cursor: pointer;
+    background-color: var(--tertiary) !important;
+}
+
+.modal div {
+    display: flex;
+    justify-content: space-between;
+}
