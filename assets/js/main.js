@@ -240,6 +240,7 @@ const loseModal = document.getElementById('lose-modal');
 const closeLoseModal = document.getElementById('lose-modal-close');
 const winSolutionList = document.getElementById('win-solution-list');
 const loseSolutionList = document.getElementById('lose-solution-list');
+const levelReached = document.getElementById('level-reached');
 
 const winModalRender = () => {
     let solutions = ""
@@ -251,6 +252,7 @@ const winModalRender = () => {
 
 const loseModalRender = () => {
     let solutions = ""
+    levelReached.textContent = `You reached level ${level}!`
     for (let i = 0; i < solutionArray.length; i++) {
         solutions += solutionArray[i] + " "
         solutionArray.length > 1 ? loseSolutionList.textContent = "YOUR SOLUTIONS: " + solutions : loseSolutionList.textContent = "YOUR SOLUTION: " + solutions;
