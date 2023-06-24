@@ -3,11 +3,12 @@ import words from "./words.js"
 const clearButton = document.querySelector('#delete');
 const timerDOM = document.getElementById("timer");
 const levelRender = document.getElementById("level");
-const panContainer = document.getElementById('pan-container')
-let solution = ""
+const panContainer = document.getElementById('pan-container');
+const solutionBucket = document.getElementById('solution');
+let solution = "";
 let solutionArray = [];
-let jumbledSolution = ""
-let guess = []
+let jumbledSolution = "";
+let guess = [];
 let level = 3;
 let levelUp = false;
 let levelText = `Level ${level}`;
@@ -68,7 +69,7 @@ const buildGuess = () => {
         btn.addEventListener("click", (e) => {
             e.target.classList.add('selected');
             e.target.disabled = true;
-            (guess[0] === "- - -") ? guess = [] : guess = guess;
+            (guess[0] === " ") ? guess = [] : guess = guess;
             guess.push(e.target.getAttribute("data-id"))
             solutionBucket.textContent = guess.join('');
             checkGameState();
@@ -116,7 +117,7 @@ const checkGameState = () => {
         renderSolution(solution, "selected-win")
         clearButton.disabled = true;
         level += 1;
-        guess = ["- - -"];
+        guess = [" "];
         if (level < 10) {
             setTimeout(() => {
                 panContainer.innerHTML = ""
@@ -125,7 +126,7 @@ const checkGameState = () => {
             }, 4000)
         };
     } else if (guess.join('') !== solution && guess.join('').length === solution.length) {
-        guess = ["- - -"];
+        guess = [""];
         flashRed();
     }
 }
@@ -140,8 +141,7 @@ clearButton.addEventListener('click', () => {
         btn.classList.remove('selected');
         btn.disabled = false;
     });
-    solutionBucket.textContent = "- - -";
-
+    solutionBucket.textContent = " ";
 })
 
 // GAME LOSE / WIN DISPLAYS MODAL ON COUNTDOWN EXPIRY OR GAME COMPLETION
@@ -149,6 +149,8 @@ clearButton.addEventListener('click', () => {
 const gameLose = () => {
     console.log("You lose!");
     panContainer.innerHTML = "";
+    clearButton.disabled = true;
+    solutionBucket.textContent = " "
     // First use render solution function that appears as red // 
     renderSolution(solution, "lose")
     // Then modal appears stating game over / level / words completeted //
