@@ -118,11 +118,17 @@ const checkGameState = () => {
         clearButton.disabled = true;
         level += 1;
         guess = [" "];
+        console.log(level)
         if (level < 10) {
             setTimeout(() => {
                 panContainer.innerHTML = ""
                 countGame();
                 clearButton.disabled = false;
+            }, 4000)
+        } if (level === 10) {
+            winModalRender();
+            setTimeout(() => {
+                winModal.showModal();
             }, 4000)
         };
     } else if (guess.join('') !== solution && guess.join('').length === solution.length) {
@@ -157,14 +163,6 @@ const gameLose = () => {
     // prompt to submit high scores // 
     // Link to high scores page or to play again // 
 };
-
-const gameWin = () => {
-    // 
-    console.log("you win!")
-    // modal appears stating game completed / level / words completeted //
-    // prompt to submit high scores // 
-    // Link to high scores page or to play again // 
-}
 
 // Countdown displays timer and defines whether game is lost or to move up to next level
 
@@ -212,7 +210,6 @@ const countGame = () => {
             break;
         case 5:
             countGamePlay(words.five);
-            winModalRender();
             break;
         case 6:
             countGamePlay(words.six);
@@ -226,9 +223,6 @@ const countGame = () => {
         case 9:
             countGamePlay(words.nine);
             break;
-        case 10:
-            gameWin();
-            break;
     }
 }
 
@@ -241,7 +235,6 @@ const closeWinModal = document.getElementById('win-modal-close');
 const solutionList = document.getElementById('solution-list');
 
 const winModalRender = () => {
-    winModal.showModal();
     let solutions = ""
     for (let i = 0; i < solutionArray.length; i++) {
         solutions += solutionArray[i] + " "
