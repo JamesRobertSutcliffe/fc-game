@@ -34,12 +34,14 @@
     <dialog id="win-modal" class="modal">
         <h1>Game Complete!</h1>
         <h2 id="solution-list"></h2>
+        <form action="submit">
+            <label for="highscore">Submit your name to be added to high scores list: </label>
+            <input type="text" id="name" name="name">
+            <button id="submit-score">Submit</button>
+        </form>
         <div>
             <div>
-                <a href="https://github.com/JamesRobertSutcliffe/the-movie-database"
-                    target="_blank"><button>GitHub</button></a>
-                <a href="https://jamesrobertsutcliffe.github.io/the-movie-database/"
-                    target="_blank"><button>WebPage</button></a>
+                <button id="high-scores">High Scores</button>
             </div>
             <div>
                 <button id="win-modal-close">Close</button>

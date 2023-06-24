@@ -249,6 +249,16 @@ h1 {
     margin: 5px
 }
 
+.modal form {
+    margin: 10px;
+    padding: 10px;
+    color: var(--secondary);
+}
+
+.modal input {
+    margin: 5px;
+}
+
 .modal button {
     margin: auto;
     padding: 5px;
@@ -256,6 +266,7 @@ h1 {
     font-size: 20px;
     font-weight: bolder;
     transition: 0.3s;
+    color: var(--secondary)
 }
 
 .modal button:hover {

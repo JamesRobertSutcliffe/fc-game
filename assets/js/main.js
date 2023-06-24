@@ -242,7 +242,7 @@ const winModalRender = () => {
     }
 }
 
-
+winModal.showModal();
 
 closeWinModal.addEventListener('click', () => {
     winModal.close();
