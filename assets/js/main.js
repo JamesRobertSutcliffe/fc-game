@@ -253,7 +253,7 @@ const loseModalRender = () => {
     let solutions = ""
     for (let i = 0; i < solutionArray.length; i++) {
         solutions += solutionArray[i] + " "
-        loseSolutionList.textContent = "YOUR SOLUTIONS: " + solutions;
+        solutionArray.length > 1 ? loseSolutionList.textContent = "YOUR SOLUTIONS: " + solutions : loseSolutionList.textContent = "YOUR SOLUTION: " + solutions;
     }
 }
 
