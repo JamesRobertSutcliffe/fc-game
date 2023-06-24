@@ -30,12 +30,11 @@
 
     <!-- // Modals // -->
 
-
     <dialog id="win-modal" class="modal">
         <h1>Game Complete!</h1>
-        <h2 id="solution-list"></h2>
+        <h2 id="win-solution-list"></h2>
         <form action="submit">
-            <label for="highscore">Submit your name to be added to high scores list: </label>
+            <label for="highscore">Submit your name to be added to local storage scores list: </label>
             <input type="text" id="name" name="name">
             <button id="submit-score">Submit</button>
         </form>
@@ -45,6 +44,24 @@
             </div>
             <div>
                 <button id="win-modal-close">Close</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="lose-modal" class="modal">
+        <h1 id="level-reached"></h1>
+        <h2 id="lose-solution-list"></h2>
+        <form action="submit">
+            <label for="highscore">Submit your name to be added to local storage scores list: </label>
+            <input type="text" id="name" name="name">
+            <button id="submit-score">Submit</button>
+        </form>
+        <div>
+            <div>
+                <button id="high-scores">High Scores</button>
+            </div>
+            <div>
+                <button id="lose-modal-close">Close</button>
             </div>
         </div>
     </dialog>

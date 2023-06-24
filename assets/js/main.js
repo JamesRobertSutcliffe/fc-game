@@ -160,6 +160,7 @@ const gameLose = () => {
     // First use render solution function that appears as red // 
     renderSolution(solution, "lose")
     // Then modal appears stating game over / level / words completeted //
+    loseModalRender();
     // prompt to submit high scores // 
     // Link to high scores page or to play again // 
 };
@@ -174,6 +175,9 @@ const countdownTimer = () => {
         if (--timer < 0) {
             clearInterval(countdownInterval);
             gameLose();
+            setTimeout(() => {
+                loseModal.showModal();
+            }, 4000)
         } if (levelUp === true) {
             clearInterval(countdownInterval);
             levelUp = false;
@@ -232,21 +236,36 @@ countGame();
 
 const winModal = document.getElementById('win-modal');
 const closeWinModal = document.getElementById('win-modal-close');
-const solutionList = document.getElementById('solution-list');
+const loseModal = document.getElementById('lose-modal');
+const closeLoseModal = document.getElementById('lose-modal-close');
+const winSolutionList = document.getElementById('win-solution-list');
+const loseSolutionList = document.getElementById('lose-solution-list');
 
 const winModalRender = () => {
     let solutions = ""
     for (let i = 0; i < solutionArray.length; i++) {
         solutions += solutionArray[i] + " "
-        solutionList.textContent = "YOUR SOLUTIONS: " + solutions;
+        winSolutionList.textContent = "YOUR SOLUTIONS: " + solutions;
     }
 }
 
-winModal.showModal();
+const loseModalRender = () => {
+    let solutions = ""
+    for (let i = 0; i < solutionArray.length; i++) {
+        solutions += solutionArray[i] + " "
+        loseSolutionList.textContent = "YOUR SOLUTIONS: " + solutions;
+    }
+}
 
 closeWinModal.addEventListener('click', () => {
     winModal.close();
 })
+
+closeLoseModal.addEventListener('click', () => {
+    loseModal.close();
+})
+
+
 
 
 
