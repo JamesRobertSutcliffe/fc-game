@@ -25,9 +25,11 @@
 
 ## To Do
 
-- Add scores to local storage via modals
+- Add scores to local storage via modals - logic development begun
 - create scores pages that renders from local storage (!COMPLETE UP TO HERE BY EOW!)
 - Add landing page - select game mode
 - Fix shuffle issue (sometimes displays the solution non shuffled)
+
+If poss:
 - add different game modes? 
 - compartmentalise?

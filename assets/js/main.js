@@ -243,6 +243,7 @@ const loseSolutionList = document.getElementById('lose-solution-list');
 const levelReached = document.getElementById('level-reached');
 
 const winModalRender = () => {
+    winNameSubmit.value = "";
     let solutions = ""
     for (let i = 0; i < solutionArray.length; i++) {
         solutions += solutionArray[i] + " "
@@ -251,8 +252,9 @@ const winModalRender = () => {
 }
 
 const loseModalRender = () => {
-    let solutions = ""
-    levelReached.textContent = `You reached level ${level}!`
+    loseNameSubmit.value = "";
+    let solutions = "";
+    levelReached.textContent = `You reached level ${level}!`;
     for (let i = 0; i < solutionArray.length; i++) {
         solutions += solutionArray[i] + " "
         solutionArray.length > 1 ? loseSolutionList.textContent = "YOUR SOLUTIONS: " + solutions : loseSolutionList.textContent = "YOUR SOLUTION: " + solutions;
@@ -269,7 +271,19 @@ closeLoseModal.addEventListener('click', () => {
 
 // High Scores / Local Storage
 
+const submitScores = document.querySelectorAll('#submit-score')
+const loseNameSubmit = document.getElementById('lose-name');
+const winNameSubmit = document.getElementById('win-name');
 
+submitScores.forEach(i => {
+    i.addEventListener("click", (e) => {
+        e.preventDefault()
+        level === 10 ? console.log(winNameSubmit.value) : console.log(loseNameSubmit.value)
+        loseNameSubmit.value = "";
+        winNameSubmit.value = "";
+        e.target.disabled = true;
+    })
+})
 
 
 
