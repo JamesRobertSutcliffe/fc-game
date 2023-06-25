@@ -267,6 +267,10 @@ closeLoseModal.addEventListener('click', () => {
     loseModal.close();
 })
 
+// High Scores / Local Storage
+
+
+
 
 
 
