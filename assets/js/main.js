@@ -278,7 +278,9 @@ const winNameSubmit = document.getElementById('win-name');
 submitScores.forEach(i => {
     i.addEventListener("click", (e) => {
         e.preventDefault()
-        level === 10 ? console.log(winNameSubmit.value) : console.log(loseNameSubmit.value)
+        let scoresObject = JSON.parse(localStorage.getItem("scores")) || {};
+        level === 10 ? scoresObject[winNameSubmit.value] = score : scoresObject[loseNameSubmit.value]
+        localStorage.setItem("scores", JSON.stringify(scoresObject));
         loseNameSubmit.value = "";
         winNameSubmit.value = "";
         e.target.disabled = true;
