@@ -25,6 +25,11 @@
 
 ## To Do
 
+next:
+
+-  //create logic that only runs below code if there is an entry //
+-  create logic that says you failed to reach second level, no option to submit socres in modal
+
 - Add scores to local storage via modals - logic development begun
 - create scores pages that renders from local storage (!COMPLETE UP TO HERE BY EOW!)
 - Add landing page - select game mode

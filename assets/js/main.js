@@ -275,17 +275,20 @@ const submitScores = document.querySelectorAll('#submit-score')
 const loseNameSubmit = document.getElementById('lose-name');
 const winNameSubmit = document.getElementById('win-name');
 
+
 submitScores.forEach(i => {
     i.addEventListener("click", (e) => {
         e.preventDefault()
         let scoresObject = JSON.parse(localStorage.getItem("scores")) || {};
-        level === 10 ? scoresObject[winNameSubmit.value] = score : scoresObject[loseNameSubmit.value]
+        level === 10 ? scoresObject[winNameSubmit.value] = level : scoresObject[loseNameSubmit.value] = level
         localStorage.setItem("scores", JSON.stringify(scoresObject));
         loseNameSubmit.value = "";
         winNameSubmit.value = "";
         e.target.disabled = true;
     })
 })
+
+
 
 
 
