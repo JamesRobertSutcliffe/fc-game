@@ -274,21 +274,25 @@ closeLoseModal.addEventListener('click', () => {
 const submitScores = document.querySelectorAll('#submit-score')
 const loseNameSubmit = document.getElementById('lose-name');
 const winNameSubmit = document.getElementById('win-name');
+let loseTrim = loseNameSubmit.value.trim();
+let winTrim = winNameSubmit.value.trim();
 
 
 submitScores.forEach(i => {
     i.addEventListener("click", (e) => {
         e.preventDefault()
-        let scoresObject = JSON.parse(localStorage.getItem("scores")) || {};
-        level === 10 ? scoresObject[winNameSubmit.value] = level : scoresObject[loseNameSubmit.value] = level
-        localStorage.setItem("scores", JSON.stringify(scoresObject));
-        loseNameSubmit.value = "";
-        winNameSubmit.value = "";
-        e.target.disabled = true;
+        if (((level === 10) && (winNameSubmit.value === '')) || ((level < 10) && (loseNameSubmit.value === ''))) {
+            alert("Please enter a valid name!")
+        } else {
+            let scoresObject = JSON.parse(localStorage.getItem("scores")) || {};
+            level === 10 ? scoresObject[winNameSubmit.value] = level : scoresObject[loseNameSubmit.value] = level
+            localStorage.setItem("scores", JSON.stringify(scoresObject));
+            loseNameSubmit.value = "";
+            winNameSubmit.value = "";
+            e.target.disabled = true;
+        }
     })
 })
-
-
 
 
 
