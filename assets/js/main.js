@@ -282,20 +282,22 @@ submitScores.forEach(i => {
     i.addEventListener("click", (e) => {
         e.preventDefault()
         if ((level < 10) && (regexAlpha.test(loseNameSubmit.value) !== true) || (level === 10) && (regexAlpha.test(winNameSubmit.value) !== true)) {
-            alert("Please only enter a single word with letters only :)")
+            alert("Please enter a single word with letters only :)")
         } else {
             let scoresObject = JSON.parse(localStorage.getItem("scores")) || {};
             level === 10 ? scoresObject[winNameSubmit.value] = level : scoresObject[loseNameSubmit.value] = level
             localStorage.setItem("scores", JSON.stringify(scoresObject));
             loseNameSubmit.value = "";
             winNameSubmit.value = "";
+            loseNameSubmit.disabled = true;
+            winNameSubmit.disabled = true;
             e.target.disabled = true;
         }
     })
 })
 
-loseModal.showModal();
 
-// ((level === 10) && (winNameSubmit.value === ' ') || (winNameSubmit.value === '  ') || (winNameSubmit.value.length > 2 || winNameSubmit.value.length <)) || ((level < 10) && (loseNameSubmit.value === ' ') || (loseNameSubmit.value === '  ') || (loseNameSubmit.value.length > 2 || loseNameSubmit.value.length < 1))
+
+
 
 
