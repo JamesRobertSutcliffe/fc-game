@@ -274,13 +274,15 @@ closeLoseModal.addEventListener('click', () => {
 const submitScores = document.querySelectorAll('#submit-score')
 const loseNameSubmit = document.getElementById('lose-name');
 const winNameSubmit = document.getElementById('win-name');
+const regexAlpha = /^[A-Za-z]+$/;
 
+// Submit buttons are looped through and push scores to local storage if initials are valid
 
 submitScores.forEach(i => {
     i.addEventListener("click", (e) => {
         e.preventDefault()
-        if (((level === 10) && (winNameSubmit.value === ' ') || (winNameSubmit.value === '  ') || (winNameSubmit.value.length > 2)) || ((level < 10) && (loseNameSubmit.value === ' ') || (loseNameSubmit.value === '  ') || (loseNameSubmit.value.length > 2))) {
-            alert("Please enter a valid 2 character set of initials!")
+        if ((level < 10) && (regexAlpha.test(loseNameSubmit.value) !== true) || (level === 10) && (regexAlpha.test(winNameSubmit.value) !== true)) {
+            alert("Please only enter a single word with letters only :)")
         } else {
             let scoresObject = JSON.parse(localStorage.getItem("scores")) || {};
             level === 10 ? scoresObject[winNameSubmit.value] = level : scoresObject[loseNameSubmit.value] = level
@@ -294,6 +296,6 @@ submitScores.forEach(i => {
 
 loseModal.showModal();
 
-
+// ((level === 10) && (winNameSubmit.value === ' ') || (winNameSubmit.value === '  ') || (winNameSubmit.value.length > 2 || winNameSubmit.value.length <)) || ((level < 10) && (loseNameSubmit.value === ' ') || (loseNameSubmit.value === '  ') || (loseNameSubmit.value.length > 2 || loseNameSubmit.value.length < 1))
 
 
