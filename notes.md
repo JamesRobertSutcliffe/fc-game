@@ -27,8 +27,6 @@
 
 next:
 
--  create logic that says you failed to reach second level, no option to submit scores in modal
-- blank out text box after submission (like button) and display message saying scores have been added to local storage
 - create scores pages that renders from local storage (!COMPLETE UP TO HERE BY EOW!)
 - Add landing page - select game mode
 - Fix shuffle issue (sometimes displays the solution non shuffled)
@@ -36,3 +34,4 @@ next:
 If poss:
 - add different game modes? 
 - compartmentalise?
+- create different lose modal for not making it past first level

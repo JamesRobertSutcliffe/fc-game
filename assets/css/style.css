@@ -242,6 +242,7 @@ h1 {
     text-align: center;
     border: solid 5px var(--secondary);
     overflow: scroll;
+    color: var(--secondary);
 }
 
 .modal h1 {

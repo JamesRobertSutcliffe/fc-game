@@ -230,8 +230,6 @@ const countGame = () => {
     }
 }
 
-countGame();
-
 // MODALS LOGIC
 
 const winModal = document.getElementById('win-modal');
@@ -275,6 +273,7 @@ const submitScores = document.querySelectorAll('#submit-score')
 const loseNameSubmit = document.getElementById('lose-name');
 const winNameSubmit = document.getElementById('win-name');
 const regexAlpha = /^[A-Za-z]+$/;
+const localStorageMessage = document.querySelectorAll('#local-storage-message')
 
 // Submit buttons are looped through and push scores to local storage if initials are valid
 
@@ -283,6 +282,8 @@ submitScores.forEach(i => {
         e.preventDefault()
         if ((level < 10) && (regexAlpha.test(loseNameSubmit.value) !== true) || (level === 10) && (regexAlpha.test(winNameSubmit.value) !== true)) {
             alert("Please enter a single word with letters only :)")
+            loseNameSubmit.value = "";
+            winNameSubmit.value = "";
         } else {
             let scoresObject = JSON.parse(localStorage.getItem("scores")) || {};
             level === 10 ? scoresObject[winNameSubmit.value] = level : scoresObject[loseNameSubmit.value] = level
@@ -292,10 +293,17 @@ submitScores.forEach(i => {
             loseNameSubmit.disabled = true;
             winNameSubmit.disabled = true;
             e.target.disabled = true;
+            localStorageMessage.forEach(i => {
+                i.textContent = "Name and level added to high scores list!"
+                setTimeout(() => {
+                    i.textContent = ""
+                }, 2000)
+            })
         }
     })
-})
+});
 
+countGame();
 
 
 
