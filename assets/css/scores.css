@@ -17,6 +17,7 @@
 body {
     background-color: var(--primary);
     color: var(--secondary);
+    min-height: 100vh;
 }
 
 h1 {
@@ -42,6 +43,7 @@ h2 {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+    min-height: 50vh;
 }
 
 /* footer */
