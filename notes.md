@@ -27,11 +27,9 @@
 
 next:
 
-- create scores pages that renders from local storage (!COMPLETE UP TO HERE BY EOW!)
 - Add game rules to info box (currently lorem text)
 - Create start game button below info box / run game function on start
 - Fix shuffle issue (sometimes displays the solution non shuffled)
-- Add footers to game and highscores page
 - ensure mobile friendly
 
 If poss:

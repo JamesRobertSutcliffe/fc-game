@@ -207,6 +207,8 @@ const countGamePlay = (level) => {
 const countGame = () => {
     switch (level) {
         case 3:
+            panContainer.innerHTML = ""
+            clearButton.classList.remove('hide');
             countGamePlay(words.three);
             break;
         case 4:
@@ -303,7 +305,10 @@ submitScores.forEach(i => {
     })
 });
 
-countGame();
+// START GAME
+
+const startButton = document.getElementById("start-game")
+startButton.addEventListener('click', countGame)
 
 
 

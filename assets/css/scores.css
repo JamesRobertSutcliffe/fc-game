@@ -54,6 +54,9 @@ footer {
     width: 100%;
     background-color: var(--secondary);
     overflow: hidden;
+    bottom: 0;
+    left: 0;
+    position: fixed;
 }
 
 .footer-container {

@@ -46,6 +46,10 @@ h1 {
     text-align: center;
 }
 
+.hide {
+    display: none;
+}
+
 #delete {
     background-color: var(--secondary);
     color: var(--primary);
@@ -102,7 +106,7 @@ h1 {
 }
 
 .whitespace {
-    min-height: 12vh;
+    min-height: 10vh;
 }
 
 /* CLASSES FOR ANIMATIONS ON OUTCOMES */
@@ -239,6 +243,12 @@ h1 {
     animation: pop-color-red 3s linear 0s normal forwards;
 }
 
+/* START BUTTON */
+
+#start-game {
+    width: auto;
+}
+
 /* MODAL */
 
 .modal {
@@ -293,6 +303,9 @@ footer {
     width: 100%;
     background-color: var(--secondary);
     overflow: hidden;
+    bottom: 0;
+    left: 0;
+    position: fixed;
 }
 
 .footer-container {
@@ -331,4 +344,11 @@ footer a {
 
 .scores-link:hover {
     opacity: 1;
+}
+
+.center {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
 }
