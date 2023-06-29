@@ -27,8 +27,6 @@
 
 next:
 
-- Add game rules to info box (currently lorem text)
-- Create start game button below info box / run game function on start
 - Fix shuffle issue (sometimes displays the solution non shuffled)
 - ensure mobile friendly
 
