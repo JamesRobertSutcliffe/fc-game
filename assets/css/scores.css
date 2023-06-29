@@ -43,3 +43,51 @@ h2 {
     flex-flow: row wrap;
     justify-content: space-evenly;
 }
+
+/* footer */
+
+footer {
+    margin-top: 20px;
+    height: 35vh;
+    width: 100%;
+    background-color: var(--secondary);
+    overflow: hidden;
+}
+
+.footer-container {
+    display: flex;
+    align-items: left;
+    flex-flow: column;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    color: var(--primary);
+}
+
+
+footer img {
+    padding: 5px;
+    margin: 10px;
+    height: 100px;
+    display: inline;
+    transition: 0.3s;
+}
+
+footer img:hover {
+    scale: 110%
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.home-link {
+    transition: 0.3s;
+    opacity: 0.7;
+}
+
+.home-link:hover {
+    opacity: 1;
+}

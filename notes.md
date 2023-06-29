@@ -32,6 +32,7 @@ next:
 - Create start game button below info box / run game function on start
 - Fix shuffle issue (sometimes displays the solution non shuffled)
 - Add footers to game and highscores page
+- ensure mobile friendly
 
 If poss:
 - add different game modes? 
