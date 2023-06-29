@@ -28,3 +28,14 @@ h1 {
     color: var(--secondary);
     border-bottom: solid 5px var(--other);
 }
+
+/* Table Container  */
+
+.table-container {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
