@@ -38,10 +38,13 @@ const jumbleSolution = (solution) => {
 
     if ((joinedJumbledSolution === solution) || (joinedJumbledSolution === undefined)) {
         jumbleSolution(solution)
+    } else {
+
+        jumbledSolution = joinedJumbledSolution;
+        return jumbledSolution
     }
 
-    jumbledSolution = joinedJumbledSolution;
-    return jumbledSolution
+
 };
 
 // RENDERJUMBLEDSOLUTION FUNCTION RENDERS THE JUMBLED SOLUTION TO THE PAGE AS BUTTONS
