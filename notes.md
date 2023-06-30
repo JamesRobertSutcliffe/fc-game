@@ -27,10 +27,10 @@
 
 next:
 
-- Fix shuffle issue (sometimes displays the solution non shuffled)
 - ensure mobile friendly
 
 If poss:
 - add different game modes? 
 - compartmentalise?
 - create different lose modal for not making it past first level
+- keep testing shuffle issues
