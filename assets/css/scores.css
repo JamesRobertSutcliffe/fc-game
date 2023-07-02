@@ -95,3 +95,23 @@ footer a {
 .home-link:hover {
     opacity: 1;
 }
+
+@media screen and (max-width: 1200px) {
+
+    /* FOOTER */
+
+    footer {
+        height: 30vh;
+        position: relative;
+    }
+
+    footer h2 {
+        scale: 80%
+    }
+
+    .footer-container {
+        align-items: center;
+        width: 90%;
+        margin: auto;
+    }
+}

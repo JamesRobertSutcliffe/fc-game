@@ -384,8 +384,6 @@ footer a {
     footer {
         height: 30vh;
         position: fixed;
-        bottom: none;
-        left: none;
     }
 
     footer h2 {
@@ -414,24 +412,15 @@ footer a {
     /* Panagram button container */
 
     .pan-container {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        width: 95%;
-        margin: auto;
-        text-align: center;
+        width: 75%;
     }
 
     .pan-container button {
-        background-color: var(--primary);
-        color: var(--secondary);
         width: 24%;
-        font-weight: bold;
-        font-size: larger;
-        margin: 1%;
-        padding: 2%;
-        border: solid 3px var(--secondary);
-        transition: 0.4s;
+    }
+
+    .modal {
+        width: 95%;
     }
 
 }
