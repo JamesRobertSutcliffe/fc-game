@@ -383,7 +383,7 @@ footer a {
 
     footer {
         height: 30vh;
-        position: fixed;
+        position: relative;
     }
 
     footer h2 {
