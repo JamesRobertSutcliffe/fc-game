@@ -382,8 +382,8 @@ footer a {
     /* FOOTER */
 
     footer {
-        height: 20vh;
-        position: fixed;
+        height: 30vh;
+        position: relative;
     }
 
     footer h2 {
@@ -397,7 +397,8 @@ footer a {
     }
 
     footer img {
-        scale: 65%
+        scale: 65%;
+        margin: 2px
     }
 
     footer img:hover {
