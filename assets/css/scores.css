@@ -105,6 +105,15 @@ footer a {
         position: relative;
     }
 
+    footer img {
+        scale: 75%;
+        margin: 2px
+    }
+
+    footer img:hover {
+        scale: 80%
+    }
+
     footer h2 {
         scale: 80%
     }

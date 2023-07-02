@@ -397,12 +397,12 @@ footer a {
     }
 
     footer img {
-        scale: 65%;
+        scale: 75%;
         margin: 2px
     }
 
     footer img:hover {
-        scale: 75%
+        scale: 80%
     }
 
     /* INFO SECTION */
