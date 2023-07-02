@@ -382,8 +382,8 @@ footer a {
     /* FOOTER */
 
     footer {
-        height: 30vh;
-        position: relative;
+        height: 20vh;
+        position: fixed;
     }
 
     footer h2 {
@@ -394,6 +394,14 @@ footer a {
         align-items: center;
         width: 90%;
         margin: auto;
+    }
+
+    footer img {
+        scale: 65%
+    }
+
+    footer img:hover {
+        scale: 75%
     }
 
     /* INFO SECTION */
