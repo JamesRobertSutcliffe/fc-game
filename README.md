@@ -10,7 +10,7 @@ The game is programmed in HTML, CSS and Javascript. I extended the colour theme 
 
 ![Scores](assets/images/scores.png)
 
-My motivation for this was project was to develop an enjoyable game that can be played multiple times and still be enjoyable for the user. I also wanted to strengthen and develop my logic building skills in javascript, building a project in a structured and organised fashion by implementing JS modules. In creating this project I learned skills in CSS animations, JS modules, fucntional programming, RegEx, objects, local storage persistence and manipulating the DOM.
+My motivation for this was project was to develop an enjoyable game that can be played multiple times and still be enjoyable for the user. I also wanted to strengthen and develop my logic building skills in javascript, building a project in a structured and organised fashion by implementing JS modules. In creating this project I learned skills in CSS animations, JS modules, functional programming, RegEx, objects, local storage persistence and manipulating the DOM.
 
 ## Table of Contents
 
@@ -75,7 +75,7 @@ MIT License.
 
 I have utilised chat GPT as a co-pilot when building this website. Below are some examples of prompts I used in aid of this project.  
 
-- I used chatGPT to obtain the solutions for the game, I needed words that did not have anagrams (all of the letter combinations can only create a single word) in order to make the game playable. ChatGPT came up with some suggestions, althought it did make a lot of mistakes here! 
+- I used chatGPT to obtain the solutions for the game, I needed words that did not have anagrams (all of the letter combinations can only create a single word) in order to make the game playable. ChatGPT came up with some suggestions, although it did make a lot of mistakes here! 
 
 ![Anagrams](assets/images/anagrams.png)
 
@@ -83,7 +83,7 @@ I have utilised chat GPT as a co-pilot when building this website. Below are som
 
 In order to validate the function I created around this suggestion I built some test cases in vanilla javascript, see next section of readme for more details. 
 
-![shuffle](assets/images/toggle.png)
+![shuffle](assets/images/shuffle.png)
 
 ## Tests
 
