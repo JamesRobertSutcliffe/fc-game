@@ -19,8 +19,8 @@ My motivation for this was project was to develop an enjoyable game that can be 
 - [Credits](#credits)
 - [License](#license)
 - [Features](#features)
-- [Tests](#tests)
 - [AI](#ai)
+- [Tests](#tests)
 
 ## Installation
 
@@ -71,19 +71,21 @@ MIT License.
 - Modals.
 - JSON logic driven local storage persistence high scores list.
 
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
-
 ## AI
 
 I have utilised chat GPT as a co-pilot when building this website. Below are some examples of prompts I used in aid of this project.  
 
-- To refresh my knowledge of DOM method query selector all and it's functionality. 
+- I used chatGPT to obtain the solutions for the game, I needed words that did not have anagrams (all of the letter combinations can only create a single word) in order to make the game playable. ChatGPT came up with some suggestions, althought it did make a lot of mistakes here! 
 
-![Toggle](assets/images/query.png)
+![Anagrams](assets/images/anagrams.png)
 
-- To help me build the color theme toggle feature.
+- Shuffling the solution of the game is a key part of game logic, I looked to chatGPT for suggestions on the best approach and it came back with the 'Durstenfeld shuffle algorithm'. Unfortunately the code supplied did not work exactly but had to be tweaked slightly, adding and else statement. So although it was not foolproof, chatGPT pointed me in the correct direction. 
 
-![Toggle](assets/images/toggle.png)
+In order to validate the function I created around this suggestion I built some test cases in vanilla javascript, see next section of readme for more details. 
+
+![shuffle](assets/images/toggle.png)
+
+## Tests
+
+Go the extra mile and write tests for your application. Then provide examples on how to run them here.
 
