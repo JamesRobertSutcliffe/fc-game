@@ -87,5 +87,18 @@ In order to validate the function I created around this suggestion I built some 
 
 ## Tests
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+I wrote a test for the jumbleSolution function, this function scrambles the solution and is key part of the gameplay logic. I noticed this this function was not working correctly so I built this test to ensure the fixes I made worked. To run this test, fork the entire repository and find the test in the assets/test/ directory. 
+
+![Folders](assets/images/folders.png)
+
+To add test cases, you can run the function in the console the new new test case parsed as a string. 
+
+![Test](assets/images/test.png)
+
+The view the result, open the test.html document in the browser open the console. Here you can compare the parsed test case and the output of the test. If the 2 do not match the test is passed. 
+
+![Console](assets/images/console.png)
+
+
+
 
